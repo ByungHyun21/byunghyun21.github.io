@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ByungHyun21 — Developer</title>
+<meta name="description" content="Developer interested in Local AI and Local AI Hardware.">
+<style>
+:root {
+  --bg: #08090c;
+  --bg-elevated: #0e1015;
+  --text: #c8cdd5;
+  --text-dim: #5c6370;
+  --accent: #22d3ee;
+  --accent-glow: rgba(34, 211, 238, 0.15);
+  --border: #1a1d24;
+  --mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
+  --sans: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* animated grid background */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.4;
+  mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black 20%, transparent 80%);
+}
+.grid-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 0%, var(--accent-glow) 50%, transparent 100%);
+  height: 200px;
+  width: 100%;
+  animation: scanline 12s linear infinite;
+  opacity: 0.15;
+}
+@keyframes scanline {
+  0% { transform: translateY(-200px); }
+  100% { transform: translateY(100vh); }
+}
+
+/* layout */
+.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+section { padding: 80px 0; border-top: 1px solid var(--border); }
+section:first-of-type { border-top: none; }
+
+/* hero */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.hero-status {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--accent);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.hero-status::before {
+  content: '';
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px var(--accent); }
+  50% { opacity: 0.5; box-shadow: 0 0 2px var(--accent); }
+}
+.hero h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #e8eaf0;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.hero .tagline {
+  font-family: var(--mono);
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--text-dim);
+  min-height: 1.6em;
+}
+.hero .tagline .cursor {
+  display: inline-block;
+  width: 0.55em;
+  height: 1.1em;
+  background: var(--accent);
+  margin-left: 2px;
+  vertical-align: text-bottom;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+.hero .meta {
+  margin-top: 24px;
+  font-size: 15px;
+  color: var(--text-dim);
+}
+.hero .meta span { margin-right: 20px; }
+.hero .meta i { font-style: normal; margin-right: 6px; }
+
+/* section headers */
+.sec-label {
+  font-family: var(--mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+.sec-label::before { content: '// '; color: var(--text-dim); }
+
+/* about */
+.about p { color: var(--text); margin-bottom: 16px; font-size: 16px; }
+.about .keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.about .keywords span {
+  font-family: var(--mono);
+  font-size: 12px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-dim);
+  transition: all 0.2s ease;
+}
+.about .keywords span:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 12px var(--accent-glow);
+}
+
+/* open source cards */
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 4px 24px var(--accent-glow);
+}
+.card .card-title {
+  font-weight: 600;
+  color: #e8eaf0;
+  margin-bottom: 6px;
+  font-size: 15px;
+}
+.card .card-title a { color: inherit; text-decoration: none; }
+.card .card-title a:hover { color: var(--accent); }
+.card .card-desc {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+.card .card-tags {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.card .card-tags span::before { content: '#'; color: var(--accent); opacity: 0.5; }
+
+/* scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* footer */
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-dim);
+  text-align: center;
+}
+footer a { color: var(--accent); text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover { opacity: 0.8; }
+
+/* hardware spec block */
+.spec {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--text-dim);
+  border-left: 2px solid var(--accent);
+  padding-left: 16px;
+  margin-top: 24px;
+  line-height: 1.9;
+}
+.spec .spec-key { color: var(--text); }
+.spec .spec-val { color: var(--accent); }
+
+@media (max-width: 480px) {
+  section { padding: 60px 0; }
+  .hero .meta span { display: block; margin-bottom: 4px; }
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<div class="container">
+  <div class="hero">
+    <div>
+      <div class="hero-status">online</div>
+      <h1>ByungHyun21</h1>
+      <div class="tagline"><span id="typed"></span><span class="cursor"></span></div>
+      <div class="meta">
+        <span><i>◈</i>Korea</span>
+        <span><i>◈</i>Developer</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="about reveal">
+    <div class="sec-label">About</div>
+    <p>
+      Developer interested in running large language models locally —
+      the hardware, the software, and everything in between.
+    </p>
+    <p>
+      I believe the most interesting computing happens at the edge,
+      on your own silicon, with your own data.
+    </p>
+    <div class="keywords">
+      <span>Local LLM Inference</span>
+      <span>ROCm / HIP</span>
+      <span>Strix Halo</span>
+      <span>C++</span>
+      <span>Python</span>
+      <span>Linux</span>
+    </div>
+    <div class="spec">
+      <span class="spec-key">hw</span> <span class="spec-val">AMD Strix Halo · Radeon 8060S · 128GB UMA</span><br>
+      <span class="spec-key">runtime</span> <span class="spec-val">llama.cpp · ROCm 7.2.2 · gfx1151</span><br>
+      <span class="spec-key">model</span> <span class="spec-val">Qwen3.8-27B Q4 · MTP speculative decoding</span>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-label">Open Source</div>
+    <div class="card">
+      <div class="card-title"><a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause analysis: draft-mtp acceptance collapse under concurrent load</a></div>
+      <div class="card-desc">Traced a deterministic NaN corruption in speculative decoding to an H2D input write racing the compute stream. Fixed with a synchronize before set_inputs in llama_context::process_ubatch.</div>
+      <div class="card-tags"><span>llama.cpp</span><span>concurrency</span><span>HIP</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://github.com/ggml-org/llama.cpp/issues/27572#issuecomment-5412051390">GPU top-k kernel for large-vocabulary sampling</a></div>
+      <div class="card-desc">Block-parallel radix-select implementation enabling GPU-side sampler chains on HIP, where CUB is unavailable. 429/429 test-backend-ops pass.</div>
+      <div class="card-tags"><span>llama.cpp</span><span>HIP</span><span>GPU kernel</span></div>
+    </div>
+    <div class="card">
+      <div class="card-title"><a href="https://github.com/ByungHyun21">GitHub →</a></div>
+      <div class="card-desc">More on GitHub.</div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://github.com/ByungHyun21">github.com/ByungHyun21</a>
+    <span style="margin: 0 8px; opacity: 0.3;">|</span>
+    built with a single html file
+  </footer>
+</div>
+
+<script>
+// typing effect
+const phrases = [
+  'Local AI.',
+  'Local Hardware.',
+  'Nothing leaves the machine.'
+];
+let phraseIdx = 0, charIdx = 0, isDeleting = false;
+const typedEl = document.getElementById('typed');
+
+function type() {
+  const current = phrases[phraseIdx];
+  if (isDeleting) {
+    typedEl.textContent = current.substring(0, --charIdx);
+  } else {
+    typedEl.textContent = current.substring(0, ++charIdx);
+  }
+  let delay = isDeleting ? 30 : 65;
+  if (!isDeleting && charIdx === current.length) {
+    delay = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIdx === 0) {
+    isDeleting = false;
+    phraseIdx = (phraseIdx + 1) % phrases.length;
+    delay = 400;
+  }
+  setTimeout(type, delay);
+}
+type();
+
+// scroll reveal
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
