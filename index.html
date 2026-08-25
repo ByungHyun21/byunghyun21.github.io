@@ -47,9 +47,61 @@
     </div>
   </section>
 
+  <section class="reveal">
+    <div class="sec-label">Recent Activity</div>
+    <table class="activity-table">
+      <tr>
+        <td class="date">2026-08-25</td>
+        <td class="type">Issue</td>
+        <td>
+          <a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause: draft-mtp acceptance collapse under concurrent load</a>
+          <span class="desc">Traced deterministic NaN to H2D input write racing the compute stream on HIP. Independently verified by two contributors.</span>
+        </td>
+      </tr>
+      <tr>
+        <td class="date">2026-08-24</td>
+        <td class="type">Fix</td>
+        <td>
+          <span style="font-weight:600;color:var(--text-bright);">GPU top-k kernel for large-vocabulary sampling</span>
+          <span class="desc">Block-parallel radix-select for HIP where CUB is unavailable. 429/429 tests pass.</span>
+        </td>
+      </tr>
+    </table>
+    <p style="margin-top:12px;"><a href="activity.html" style="font-size:0.8rem;color:var(--text-dim);">→ all activity</a></p>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-label">Hardware Highlights</div>
+    <div class="card">
+      <div class="card-title">256GB HBM2e across 4 GPUs</div>
+      <div class="card-desc">Four NVIDIA CMP 170HX cards with the 64GB unlock — enough VRAM to run 70B-class models entirely in memory.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">27B model on an iGPU</div>
+      <div class="card-desc">Strix Halo 128GB unified memory running Qwen3.8-27B with MTP speculative decoding in production — no discrete GPU.</div>
+    </div>
+    <div class="card">
+      <div class="card-title">7-machine fleet</div>
+      <div class="card-desc">From a quad-GPU EPYC server to Raspberry Pi 5 — every tier of compute, self-hosted.</div>
+    </div>
+    <p style="margin-top:12px;"><a href="hardware.html" style="font-size:0.8rem;color:var(--text-dim);">→ all hardware</a></p>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-label">Experience</div>
+    <table class="activity-table">
+      <tr>
+        <td class="date">20XX–</td>
+        <td class="type">Company</td>
+        <td>
+          <span style="font-weight:600;color:var(--text-bright);">Role</span>
+          <span class="desc">Description.</span>
+        </td>
+      </tr>
+    </table>
+  </section>
+
   <footer>
-    <a href="https://github.com/ByungHyun21">github.com/ByungHyun21</a>
-  </footer>
 </main>
 
 <script src="main.js"></script>
