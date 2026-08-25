@@ -1,0 +1,14 @@
+{
+  "cmpunlocker": {
+    "short": "NVIDIA CMP 170HX 64GB unlock tool",
+    "desc": "Restores compute memory access on CMP 170HX mining cards. Enables 64GB of HBM2e per card for AI inference workloads. Deployed on a 4-card EPYC server."
+  },
+  "agent-briefing": {
+    "short": "AI agent briefing system",
+    "desc": "Python tooling for multi-agent workflows on local LLM endpoints. Integrates with self-hosted llama.cpp servers."
+  },
+  "open-gpu-kernel-modules": {
+    "short": "NVIDIA open GPU kernel modules",
+    "desc": "Fork tracking NVIDIA's open kernel modules for custom modifications."
+  }
+}

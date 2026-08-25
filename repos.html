@@ -26,9 +26,7 @@
 <main>
   <section class="reveal">
     <div class="sec-label">Repos</div>
-    <p style="color:var(--text-dim); font-size:0.9rem;">
-      Coming soon.
-    </p>
+    <div id="repo-list"></div>
   </section>
 
   <footer>
@@ -36,6 +34,8 @@
   </footer>
 </main>
 
+<script src="repo-loader.js"></script>
+<script>renderRepos(document.getElementById('repo-list'));</script>
 <script src="main.js"></script>
 </body>
 </html>
