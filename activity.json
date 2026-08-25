@@ -5,12 +5,5 @@
     "title": "Root cause analysis: draft-mtp acceptance collapse under concurrent load",
     "url": "https://github.com/ggml-org/llama.cpp/issues/27572",
     "desc": "Traced deterministic NaN in speculative decoding to H2D input write racing the compute stream on HIP. Fixed with a synchronize before set_inputs. Independently verified by two contributors. Also resolves multi-slot corruption and #27579."
-  },
-  {
-    "date": "2026-08-24",
-    "type": "Fix",
-    "title": "GPU top-k kernel for large-vocabulary sampling",
-    "url": null,
-    "desc": "Block-parallel radix-select for HIP where CUB is unavailable. 429/429 tests pass."
   }
 ]
