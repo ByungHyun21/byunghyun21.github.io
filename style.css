@@ -1,13 +1,13 @@
 :root {
-  --bg: #08090c;
-  --bg-elevated: #0e1015;
-  --bg-header: rgba(8, 9, 12, 0.85);
-  --text: #c8cdd5;
-  --text-dim: #5c6370;
-  --text-bright: #e8eaf0;
-  --accent: #22d3ee;
-  --accent-glow: rgba(34, 211, 238, 0.15);
-  --border: #1a1d24;
+  --bg: #f0edf4;
+  --bg-elevated: #faf9fc;
+  --bg-header: rgba(240, 237, 244, 0.88);
+  --text: #3d3846;
+  --text-dim: #8e8899;
+  --text-bright: #1e1a26;
+  --accent: #7c5cbf;
+  --accent-glow: rgba(124, 92, 191, 0.12);
+  --border: #ddd8e6;
   --mono: 'SF Mono', 'Cascadia Code', 'Fira Code', 'JetBrains Mono', monospace;
   --sans: -apple-system, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
 }
@@ -21,7 +21,16 @@ body {
   overflow-x: hidden;
 }
 
-/* animated grid background */
+/* paper texture */
+.paper-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+/* subtle grid */
 .grid-bg {
   position: fixed;
   inset: 0;
@@ -30,9 +39,9 @@ body {
     linear-gradient(var(--border) 1px, transparent 1px),
     linear-gradient(90deg, var(--border) 1px, transparent 1px);
   background-size: 48px 48px;
-  opacity: 0.35;
-  mask-image: radial-gradient(ellipse at 50% 20%, black 10%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at 50% 20%, black 10%, transparent 70%);
+  opacity: 0.15;
+  mask-image: radial-gradient(ellipse at 50% 20%, black 5%, transparent 60%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 20%, black 5%, transparent 60%);
 }
 
 /* header */
@@ -114,21 +123,6 @@ section { margin-bottom: 48px; }
 
 /* about */
 .about p { color: var(--text); margin-bottom: 16px; font-size: 1rem; }
-.keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.keywords span {
-  font-family: var(--mono);
-  font-size: 0.75rem;
-  padding: 4px 12px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  color: var(--text-dim);
-  transition: all 0.2s ease;
-}
-.keywords span:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-  box-shadow: 0 0 12px var(--accent-glow);
-}
 
 /* activity table */
 .activity-table {
