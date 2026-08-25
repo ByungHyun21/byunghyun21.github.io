@@ -25,39 +25,73 @@
 
 <main>
   <section class="reveal">
-    <div class="sec-label">Primary Rig</div>
-    <table class="hw-table">
-      <tr><th>Component</th><th>Detail</th></tr>
-      <tr><td>APU</td><td>AMD Ryzen AI Max+ 395 <span class="val">(Strix Halo)</span></td></tr>
-      <tr><td>GPU</td><td>Radeon 8060S <span class="val">(gfx1151, 40 CU)</span></td></tr>
-      <tr><td>Memory</td><td>128GB unified <span class="val">(96GB VRAM carveout + 32GB Linux)</span></td></tr>
-      <tr><td>Runtime</td><td>ROCm 7.2.2 <span class="val">(HIP backend, native gfx1151)</span></td></tr>
-      <tr><td>OS</td><td>Ubuntu 24.04 <span class="val">(kernel 6.17)</span></td></tr>
-    </table>
-  </section>
+    <div class="sec-label">Fleet</div>
+    <p style="color:var(--text-dim); font-size:0.9rem; margin-bottom:24px;">
+      Machines I use for local AI and everything else.
+    </p>
 
-  <section class="reveal">
-    <div class="sec-label">Serving Configuration</div>
-    <div class="spec">
-      <span class="spec-key">model</span> <span class="spec-val">Qwen3.8-27B UD-Q4_K_XL + mmproj-F16</span><br>
-      <span class="spec-key">speculative</span> <span class="spec-val">MTP (draft-mtp, n-max 4)</span><br>
-      <span class="spec-key">slots</span> <span class="spec-val">4 × 262K context (1M total)</span><br>
-      <span class="spec-key">kv_cache</span> <span class="spec-val">q4_0 / q4_0, flash attention on</span><br>
-      <span class="spec-key">vram_usage</span> <span class="spec-val">~47 GiB / 96 GiB</span><br>
-      <span class="spec-key">host_ram</span> <span class="spec-val">~2 GiB steady state</span>
+    <!-- Machine 1 -->
+    <div class="card">
+      <div class="card-title">01 · EPYC Server</div>
+      <table class="hw-table" style="margin-top:8px;">
+        <tr><td>CPU</td><td>AMD EPYC 7302 <span class="val">(16C/32T, Rome)</span></td></tr>
+        <tr><td>Board</td><td>ASUS ROMED8-2T</td></tr>
+        <tr><td>RAM</td><td>128GB DDR4-3200 ECC RDIMM <span class="val">(16GB × 8)</span></td></tr>
+        <tr><td>GPU</td><td>NVIDIA CMP 170HX × 4 <span class="val">(HBM2e)</span></td></tr>
+        <tr><td>Storage</td><td>M.2 NVMe 1TB</td></tr>
+        <tr><td>PSU</td><td>Seasonic PRIME PLATINUM PX-1600 <span class="val">(ATX 3.1)</span></td></tr>
+        <tr><td>Case</td><td>CX4712</td></tr>
+      </table>
     </div>
-  </section>
 
-  <section class="reveal">
-    <div class="sec-label">Measured Performance</div>
-    <table class="hw-table">
-      <tr><th>Metric</th><th>Value</th></tr>
-      <tr><td>pp (prompt processing)</td><td class="val">278–312 t/s</td></tr>
-      <tr><td>tg (generation, realistic)</td><td class="val">15–17 t/s</td></tr>
-      <tr><td>tg (predictable content)</td><td class="val">up to 32 t/s</td></tr>
-      <tr><td>MTP acceptance (realistic)</td><td class="val">0.47–0.54</td></tr>
-      <tr><td>VRAM bandwidth utilization</td><td class="val">~saturated (UMA ceiling)</td></tr>
-    </table>
+    <!-- Machine 2 -->
+    <div class="card">
+      <div class="card-title">02 · Strix Halo</div>
+      <table class="hw-table" style="margin-top:8px;">
+        <tr><td>APU</td><td>AMD Ryzen AI Max+ 395 <span class="val">(gfx1151)</span></td></tr>
+        <tr><td>GPU</td><td>Radeon 8060S <span class="val">(40 CU)</span></td></tr>
+        <tr><td>Memory</td><td>128GB unified <span class="val">(96GB VRAM + 32GB Linux)</span></td></tr>
+        <tr><td>Runtime</td><td>ROCm 7.2.2 <span class="val">(HIP, native gfx1151)</span></td></tr>
+        <tr><td>Role</td><td><span class="val">Production LLM serving</span></td></tr>
+      </table>
+      <div class="spec" style="margin-top:16px;">
+        <span class="spec-key">model</span> <span class="spec-val">Qwen3.8-27B Q4 + MTP</span><br>
+        <span class="spec-key">pp</span> <span class="spec-val">278–312 t/s</span><br>
+        <span class="spec-key">tg</span> <span class="spec-val">15–17 t/s (realistic) / 32 t/s (peak)</span>
+      </div>
+    </div>
+
+    <!-- Machine 3 -->
+    <div class="card">
+      <div class="card-title">03 · Laptop</div>
+      <div class="card-desc">Coming soon.</div>
+    </div>
+
+    <!-- Machine 4 -->
+    <div class="card">
+      <div class="card-title">04 · Orange Pi 5 Plus</div>
+      <table class="hw-table" style="margin-top:8px;">
+        <tr><td>SoC</td><td>Rockchip RK3588 <span class="val">(4× A76 + 4× A55)</span></td></tr>
+        <tr><td>RAM</td><td>32GB LPDDR4X</td></tr>
+        <tr><td>GPU</td><td>Mali-G610 MP8 <span class="val">(Mesa Panthor)</span></td></tr>
+      </table>
+    </div>
+
+    <!-- Machine 5 -->
+    <div class="card">
+      <div class="card-title">05 · Raspberry Pi 5</div>
+      <table class="hw-table" style="margin-top:8px;">
+        <tr><td>SoC</td><td>Broadcom BCM2712 <span class="val">(4× Cortex-A76)</span></td></tr>
+      </table>
+    </div>
+
+    <!-- Machine 6 -->
+    <div class="card">
+      <div class="card-title">06 · IdeaPad Pro</div>
+      <table class="hw-table" style="margin-top:8px;">
+        <tr><td>Model</td><td>Lenovo IdeaPad Pro Gen 2</td></tr>
+      </table>
+    </div>
   </section>
 
   <footer>
