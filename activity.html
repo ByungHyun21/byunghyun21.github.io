@@ -36,10 +36,8 @@
         <td class="date">2026-08-25</td>
         <td class="type">Issue</td>
         <td>
-          <a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause analysis: draft-mtp acceptance collapse under concurrent load</a><br>
-          <span class="desc">Traced deterministic NaN in speculative decoding to H2D input write racing the compute stream on HIP.</span><br>
-          <span class="desc">Fixed with a synchronize before set_inputs. Independently verified by two contributors.</span><br>
-          <span class="desc">Also resolves multi-slot corruption and #27579.</span>
+          <a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause analysis: draft-mtp acceptance collapse under concurrent load</a>
+          <span class="desc">Traced deterministic NaN in speculative decoding to H2D input write racing the compute stream on HIP. Fixed with a synchronize before set_inputs. Independently verified by two contributors. Also resolves multi-slot corruption and #27579.</span>
         </td>
       </tr>
     </table>
