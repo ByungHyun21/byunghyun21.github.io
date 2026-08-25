@@ -27,27 +27,16 @@
   <section class="reveal">
     <div class="sec-label">Activity</div>
     <table class="activity-table">
-      <tr>
-        <th>Date</th>
-        <th>Type</th>
-        <th>Detail</th>
-      </tr>
-      <tr>
-        <td class="date">2026-08-25</td>
-        <td class="type">Issue</td>
-        <td>
-          <a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause analysis: draft-mtp acceptance collapse under concurrent load</a>
-          <span class="desc">Traced deterministic NaN in speculative decoding to H2D input write racing the compute stream on HIP. Fixed with a synchronize before set_inputs. Independently verified by two contributors. Also resolves multi-slot corruption and #27579.</span>
-        </td>
-      </tr>
+      <thead><tr><th>Date</th><th>Type</th><th>Detail</th></tr></thead>
+      <tbody id="activity-full"></tbody>
     </table>
   </section>
-
   <footer>
     <a href="https://github.com/ByungHyun21">github.com/ByungHyun21</a>
   </footer>
 </main>
 
-<script src="main.js"></script>
-</body>
+<script src="activity-loader.js"></script>
+<script>renderActivity(document.getElementById('activity-full'), null);</script>
+ <script src="main.js"></script>
 </html>

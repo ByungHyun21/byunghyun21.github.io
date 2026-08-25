@@ -101,6 +101,7 @@ main {
 }
 
 /* section */
+section { margin-bottom: 48px; }
 .sec-label {
   font-family: var(--mono);
   font-size: 0.75rem;

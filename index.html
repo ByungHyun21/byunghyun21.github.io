@@ -50,22 +50,8 @@
   <section class="reveal">
     <div class="sec-label">Recent Activity</div>
     <table class="activity-table">
-      <tr>
-        <td class="date">2026-08-25</td>
-        <td class="type">Issue</td>
-        <td>
-          <a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause: draft-mtp acceptance collapse under concurrent load</a>
-          <span class="desc">Traced deterministic NaN to H2D input write racing the compute stream on HIP. Independently verified by two contributors.</span>
-        </td>
-      </tr>
-      <tr>
-        <td class="date">2026-08-24</td>
-        <td class="type">Fix</td>
-        <td>
-          <span style="font-weight:600;color:var(--text-bright);">GPU top-k kernel for large-vocabulary sampling</span>
-          <span class="desc">Block-parallel radix-select for HIP where CUB is unavailable. 429/429 tests pass.</span>
-        </td>
-      </tr>
+      <thead><tr><th>Date</th><th>Type</th><th>Detail</th></tr></thead>
+      <tbody id="activity-preview"></tbody>
     </table>
     <p style="margin-top:12px;"><a href="activity.html" style="font-size:0.8rem;color:var(--text-dim);">→ all activity</a></p>
   </section>
@@ -106,6 +92,8 @@
   </footer>
 </main>
 
-<script src="main.js"></script>
+<script src="activity-loader.js"></script>
+<script>renderActivity(document.getElementById('activity-preview'), 3);</script>
+ <script src="main.js"></script>
 </body>
 </html>
