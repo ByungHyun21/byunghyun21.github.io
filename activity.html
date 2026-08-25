@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity — ByungHyun21</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<header>
+  <div class="header-left">
+    <h1>ByungHyun21</h1>
+    <div class="tagline"><span id="typed"></span><span class="cursor"></span></div>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="repos.html">Repos</a>
+    <a href="activity.html" class="active">Activity</a>
+    <a href="hardware.html">Hardware</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="reveal">
+    <div class="sec-label">Open Source — llama.cpp</div>
+
+    <div class="card">
+      <div class="card-title"><a href="https://github.com/ggml-org/llama.cpp/issues/27572">Root cause: H2D input write racing compute stream in speculative decoding</a></div>
+      <div class="card-desc">
+        Traced a deterministic NaN corruption under concurrent load to <code>set_input()</code> writing
+        via <code>cudaStreamPerThread</code> (no implicit sync with compute stream on HIP) while the
+        previous ubatch's graph was still reading the same input tensors. Fixed with a synchronize
+        before <code>set_inputs()</code> in <code>llama_context::process_ubatch</code>.
+      </div>
+      <div class="card-tags"><span>concurrency</span><span>HIP</span><span>root-cause</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><a href="https://github.com/ggml-org/llama.cpp/issues/27572">GPU top-k kernel for large-vocabulary sampling (HIP)</a></div>
+      <div class="card-desc">
+        Block-parallel radix-select implementation for <code>ncols > 1024</code> where CUB is
+        unavailable on HIP. Enables GPU-side sampler chains instead of CPU fallback.
+        429/429 test-backend-ops pass.
+      </div>
+      <div class="card-tags"><span>GPU-kernel</span><span>HIP</span><span>radix-select</span></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title"><a href="https://github.com/ggml-org/llama.cpp/issues/27623">Host RAM growth investigation</a></div>
+      <div class="card-desc">
+        Identified <code>--ctx-checkpoints</code> (default 32/slot) as the source of unbounded host
+        memory accumulation in long-running llama-server instances. Each checkpoint holds a full
+        slot KV state snapshot (~150MB) in host RAM.
+      </div>
+      <div class="card-tags"><span>memory</span><span>diagnosis</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <a href="https://github.com/ByungHyun21">github.com/ByungHyun21</a>
+  </footer>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>

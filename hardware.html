@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hardware — ByungHyun21</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<header>
+  <div class="header-left">
+    <h1>ByungHyun21</h1>
+    <div class="tagline"><span id="typed"></span><span class="cursor"></span></div>
+  </div>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="repos.html">Repos</a>
+    <a href="activity.html">Activity</a>
+    <a href="hardware.html" class="active">Hardware</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="reveal">
+    <div class="sec-label">Primary Rig</div>
+    <table class="hw-table">
+      <tr><th>Component</th><th>Detail</th></tr>
+      <tr><td>APU</td><td>AMD Ryzen AI Max+ 395 <span class="val">(Strix Halo)</span></td></tr>
+      <tr><td>GPU</td><td>Radeon 8060S <span class="val">(gfx1151, 40 CU)</span></td></tr>
+      <tr><td>Memory</td><td>128GB unified <span class="val">(96GB VRAM carveout + 32GB Linux)</span></td></tr>
+      <tr><td>Runtime</td><td>ROCm 7.2.2 <span class="val">(HIP backend, native gfx1151)</span></td></tr>
+      <tr><td>OS</td><td>Ubuntu 24.04 <span class="val">(kernel 6.17)</span></td></tr>
+    </table>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-label">Serving Configuration</div>
+    <div class="spec">
+      <span class="spec-key">model</span> <span class="spec-val">Qwen3.8-27B UD-Q4_K_XL + mmproj-F16</span><br>
+      <span class="spec-key">speculative</span> <span class="spec-val">MTP (draft-mtp, n-max 4)</span><br>
+      <span class="spec-key">slots</span> <span class="spec-val">4 × 262K context (1M total)</span><br>
+      <span class="spec-key">kv_cache</span> <span class="spec-val">q4_0 / q4_0, flash attention on</span><br>
+      <span class="spec-key">vram_usage</span> <span class="spec-val">~47 GiB / 96 GiB</span><br>
+      <span class="spec-key">host_ram</span> <span class="spec-val">~2 GiB steady state</span>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <div class="sec-label">Measured Performance</div>
+    <table class="hw-table">
+      <tr><th>Metric</th><th>Value</th></tr>
+      <tr><td>pp (prompt processing)</td><td class="val">278–312 t/s</td></tr>
+      <tr><td>tg (generation, realistic)</td><td class="val">15–17 t/s</td></tr>
+      <tr><td>tg (predictable content)</td><td class="val">up to 32 t/s</td></tr>
+      <tr><td>MTP acceptance (realistic)</td><td class="val">0.47–0.54</td></tr>
+      <tr><td>VRAM bandwidth utilization</td><td class="val">~saturated (UMA ceiling)</td></tr>
+    </table>
+  </section>
+
+  <footer>
+    <a href="https://github.com/ByungHyun21">github.com/ByungHyun21</a>
+  </footer>
+</main>
+
+<script src="main.js"></script>
+</body>
+</html>
