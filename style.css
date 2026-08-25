@@ -142,6 +142,53 @@ main {
   color: var(--accent);
   box-shadow: 0 0 12px var(--accent-glow);
 }
+/* activity table */
+.activity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.activity-table th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--accent);
+}
+.activity-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+.activity-table .date {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+.activity-table .type {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+.activity-table a {
+  font-weight: 600;
+  color: var(--text-bright);
+  text-decoration: none;
+}
+.activity-table a:hover {
+  color: var(--accent);
+}
+.activity-table .desc {
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  display: block;
+  margin-top: 2px;
+}
 
 /* spec block */
 .spec {
