@@ -1,12 +1,5 @@
 [
   {
-    "date": "2026-08-26",
-    "type": "PR",
-    "title": "kv-cache: initialize per-stream views after buffer allocation",
-    "url": "https://github.com/ggml-org/llama.cpp/pull/27738",
-    "desc": "Fixes the draft-mtp abort on Vulkan (#23737): k_stream/v_stream views were created before KV tensor allocation, leaving tensor->data NULL on backends that skip ggml_backend_view_init. 20-line guarded init after buffer allocation. Verified on gfx1151/RADV — CLI, server -np 4, /slots save-restore, tool calling, vision all pass; 31.8 t/s where stock aborts in 14 s."
-  },
-  {
     "date": "2026-08-25",
     "type": "Issue",
     "title": "Root cause analysis: draft-mtp acceptance collapse under concurrent load",
