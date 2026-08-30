@@ -216,6 +216,18 @@ section { margin-bottom: 48px; }
 }
 .card .card-tags span::before { content: '#'; color: var(--accent); opacity: 0.5; }
 
+/* repo pager */
+.pager { display: flex; align-items: center; gap: 6px; margin-top: 16px; flex-wrap: wrap; }
+.page-btn {
+  font-family: var(--mono); font-size: 0.75rem; padding: 4px 10px;
+  border: 1px solid var(--border); background: var(--bg-elevated); color: var(--text-dim);
+  border-radius: 6px; cursor: pointer; transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.page-btn:hover:not(:disabled) { color: var(--accent); border-color: var(--accent); }
+.page-btn.active { color: var(--accent); background: var(--accent-glow); border-color: var(--accent); }
+.page-btn:disabled { opacity: 0.35; cursor: default; }
+.pager-info { font-family: var(--mono); font-size: 0.75rem; color: var(--text-dim); margin-left: auto; }
+
 /* scroll reveal */
 .reveal {
   opacity: 0;

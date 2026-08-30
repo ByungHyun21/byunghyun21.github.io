@@ -16,14 +16,12 @@ repos.html ─── repo-loader.js ──────> GitHub API  ─┐
 hardware.html / contact.html ── static only
 main.js (all pages): typing animation + IntersectionObserver `.reveal`
 ```
-
-- Render pattern: each loader exposes a **global function** (`renderActivity(container, max)`, `renderRepos(container)`); the page calls it from an inline `<script>` at end of body.
-- `repo-loader.js` fetches `https://api.github.com/users/ByungHyun21/repos?sort=pushed&per_page=20`, filters forks and `byunghyun21.github.io`, re-sorts by `pushed_at` desc, and overlays hand-written descriptions from `repo-descriptions.json` (keyed by repo name, fields `short`/`desc`).
+- `repo-loader.js` fetches `https://api.github.com/users/ByungHyun21/repos?sort=pushed&per_page=100`, filters forks and `byunghyun21.github.io`, re-sorts by `pushed_at` desc, overlays hand-written descriptions from `repo-descriptions.json` (keyed by repo name, fields `short`/`desc`), and paginates client-side — 10 repos per page (`.pager`/`.page-btn` in `style.css`).
 - `activity.json` is rendered as-is in array order — **keep it newest-first**; `max` only slices from the top.
 
 ## Key Directories
 
-None — all 12 files live in the repo root. No `src/`, no tests, no CI (`.github/` does not exist), no README/LICENSE/.gitignore.
+None — all 13 files live in the repo root (12 site files + `AGENTS.md`). No `src/`, no tests, no CI (`.github/` does not exist), no README/LICENSE/.gitignore.
 
 ## Development Commands
 
