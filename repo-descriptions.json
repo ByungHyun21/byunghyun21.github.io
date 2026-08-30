@@ -92,8 +92,8 @@
     "desc": "Cut objects out of a handful of real images (BiRefNet RGBA cutouts), composite them onto target-free backgrounds, and mass-produce labeled training sets — where you paste is the label, so zero manual annotation. Trains via ultralytics YOLO; 32 tests passing."
   },
   "LLM170": {
-    "short": "Reserved repository — empty",
-    "desc": "Created 2026-08-28. No code, no README, no description published yet."
+    "short": "Pure-Rust LLM inference engine for the CMP 170HX",
+    "desc": "Every layer from scratch — GGUF v3 parsing, dequantization, kernels, scheduling — no llama.cpp, no ggml, no C/C++ toolchain. Designed around the card's eFUSE throttle (FP16 half2 full-speed, FP32 FFMA 1/32): universal, cmp-stock, and cmp-unlocked (40–64 GB) profiles. Parser and dequant cross-validated against llama.cpp; GPU backend after the CPU reference."
   },
   "OpenNodia": {
     "short": "Self-hosted non-custodial DEX node for Algorand",
