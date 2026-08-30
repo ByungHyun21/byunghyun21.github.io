@@ -10,5 +10,93 @@
   "open-gpu-kernel-modules": {
     "short": "NVIDIA open GPU kernel modules",
     "desc": "Fork tracking NVIDIA's open kernel modules for custom modifications."
+  },
+  "tench-office": {
+    "short": "100% Rust office suite — Docs, Sheets, Slides, Kodocs",
+    "desc": "Cross-platform office suite built with Tauri 2. Word processor, spreadsheet, slides, and docs editors run fully locally — no telemetry, no accounts, no server round-trips. AI assistance flows through the local Tench Engine."
+  },
+  "tench-media": {
+    "short": "Rust media suite — viewer, image editor, player, video composer",
+    "desc": "Four apps in one: instant image viewer for 100k+ libraries, layered image editor, media player, and multi-track video editor. Tauri 2 with an in-house UI framework — no Electron, no JavaScript, no cloud uploads."
+  },
+  "tench-knowledge": {
+    "short": "Rust research & study tools — reference manager + SRS tutor",
+    "desc": "Research: paper management with DOI/arXiv fetch, PDF annotation, and BibTeX/APA citations. Study: SM-2 spaced-repetition tutor with an AI tutor and multi-subject decks. Local Tench Engine AI — no accounts, no cloud sync."
+  },
+  "tench-code": {
+    "short": "AI-augmented code editor in 100% Rust",
+    "desc": "The entire stack is Rust — tree-sitter editing, file watcher, terminal, Git plumbing, AI router — rendered with the in-house Vello UI, so no Electron or Chromium anywhere. AI routes to local llama.cpp/Ollama or cloud; source never leaves the machine unless opted in."
+  },
+  "tench-authoring": {
+    "short": "Rust long-form writing tools — manuscript editor + interactive fiction",
+    "desc": "Story: novel manuscript editor with chapter organization, character relationship maps, and world-building. Universe: interactive character-driven storytelling with four modes and persistent character memory. AI via the local Tench Engine."
+  },
+  "mymy": {
+    "short": "Local AI agent workspace for solo operators",
+    "desc": "One app for native LLM agents: project workspaces, prompt files (AGENTS.md/SOUL.md), file previews, a sandboxed command runner, and tasks/finance/goals tracking. React 19 + Rust (axum), PIN-locked, agent work stored under a local Drive."
+  },
+  "myTerminal": {
+    "short": "Self-hosted web SSH terminal with persistent sessions",
+    "desc": "xterm.js in the browser proxied through a small self-hosted server. Fixes Hangul IME input that native Android tablet terminals silently drop, and keeps SSH sessions alive in server RAM across device switches — tmux-like without tmux on the remote host."
+  },
+  "myLabel": {
+    "short": "Universal multimodal data labeling platform",
+    "desc": "One platform annotating text, image, audio, video, and LiDAR/3D — a purpose-built canvas per modality, role-based access control, and review/QA workflows. Built for internal data teams needing precision and throughput."
+  },
+  "myBenchmark": {
+    "short": "Benchmark LLMs against your own custom problem sets",
+    "desc": "Register your own multiple-choice and short-answer questions, connect self-hosted LLM servers or external APIs, and get automatic grading with token/cost statistics and side-by-side rankings. Planning stage — no code shipped yet."
+  },
+  "kiwi-code": {
+    "short": "Local-first AI coding agent for the terminal — bring your own model",
+    "desc": "Rust CLI agent that reads code, edits files, runs commands, searches, and checks its own work — in the terminal, headless in CI, or a loopback browser client from one binary. Ollama out of the box with no cloud key; pairs with kiwi-wiki for knowledge that survives sessions."
+  },
+  "Abalone-Skill-Book": {
+    "short": "MCP server that serves agent guidance at the right moment",
+    "desc": "Recommends skill documents before an agent starts meaningful work, records which ones it actually opened, and returns their self-check sections before the agent claims completion. Catches the constraints agents tend to skip — API privacy fields, downside scenarios, accessibility."
+  },
+  "myDevBox": {
+    "short": "Self-hosted central sandbox for AI-pair development",
+    "desc": "One shared server sandbox reached from any PC through a single browser tab — code editor, terminal, and agent chat unified, with git sync and file watching per project. Ships a self-maintaining LLM wiki on pgvector as the project's living memory."
+  },
+  "myLLM": {
+    "short": "Single OpenAI-compatible endpoint for all LLM providers",
+    "desc": "Route, fail over, and track cost across OpenAI, Anthropic, OpenRouter, local llama.cpp servers, or anything else — behind one familiar OpenAI-compatible API. TypeScript, Next.js, SQLite."
+  },
+  "kiwi-wiki": {
+    "short": "Self-hosted knowledge substrate for terminal agents",
+    "desc": "Rust (axum) service pairing a verbatim document corpus — datasheets, books, web pages — with a compiled, interlinked wiki that agents browse, read, and grow. Holds the actual sources so the agent explores instead of hallucinating from parametric memory. Alpha."
+  },
+  "Tably": {
+    "short": "Local-first visual workflow platform built around AI",
+    "desc": "Design automations on a visual graph where autonomous ReAct agents, multi-provider LLM routing, checkpointed execution, and human-in-the-loop approval are core node types, not plugins. Everything runs on your machine — your data, your models, your keys."
+  },
+  "InfoHunter": {
+    "short": "Self-hosted financial news intelligence pipeline",
+    "desc": "Collects RSS/Atom feeds on your schedule, runs every article through a local LLM to extract summaries, entities, and investment relevance, dedupes with vector similarity, and compiles weekly reports. Fully on-premise — sources, watchlist, and strategy never leave the machine."
+  },
+  "HiveMind": {
+    "short": "Self-hosted agent org chart that plans, codes, and reviews",
+    "desc": "Runs a software company on your own machine: CEO → CTO → developer agents pick up issues, work in isolated Docker sandboxes, commit to Git, and route decisions back through an approval workflow. All on local models via llama.cpp — no external AI APIs."
+  },
+  "Doggi": {
+    "short": "Self-hosted AI development agent platform",
+    "desc": "Rust agent runtime with streaming tool calls, checkpoints, and context compaction; Plan/Build modes gate destructive plans behind explicit approval. Streams into an IDE-style web workspace — chat, terminal, browser, git, wiki panels. Your code, your models, your machine."
+  },
+  "CodeChain": {
+    "short": "Turns other repos' best ideas into improvements for your code",
+    "desc": "Watches the open-source repositories you pick, analyzes every new commit/PR with an AI agent, and files concrete improvement suggestions for your target project — drafted, then automatically reviewed before you ever see them."
+  },
+  "Copy-Paste-Synthesis-Trainer": {
+    "short": "Offline copy-paste synthesis trainer for YOLO detectors",
+    "desc": "Cut objects out of a handful of real images (BiRefNet RGBA cutouts), composite them onto target-free backgrounds, and mass-produce labeled training sets — where you paste is the label, so zero manual annotation. Trains via ultralytics YOLO; 32 tests passing."
+  },
+  "LLM170": {
+    "short": "Reserved repository — empty",
+    "desc": "Created 2026-08-28. No code, no README, no description published yet."
+  },
+  "OpenNodia": {
+    "short": "Self-hosted non-custodial DEX node for Algorand",
+    "desc": "Run your own Algorand node, verify ASA assets against your own ledger copy, and operate a non-custodial DEX from a server you control. Rust, pre-alpha. Discontinued — no longer under active development."
   }
 }
