@@ -11,6 +11,7 @@ Flat directory; five pages share one stylesheet and one behavior script.
 ```
 index.html ──┬─ activity-loader.js ──> activity.json          (3 newest rows in "Recent Activity")
 activity.html┴─ activity-loader.js ──> activity.json          (full table)
+index.html ──── contrib-loader.js ───> contributions API     ("GitHub Activity" heatmap)
 repos.html ─── repo-loader.js ──────> GitHub API  ─┐
                               repo-descriptions.json ┴─ merge → repo cards
 hardware.html / contact.html ── static only
@@ -18,10 +19,11 @@ main.js (all pages): typing animation + IntersectionObserver `.reveal`
 ```
 - `repo-loader.js` fetches `https://api.github.com/users/ByungHyun21/repos?sort=pushed&per_page=100`, filters forks and `byunghyun21.github.io`, re-sorts by `pushed_at` desc, overlays hand-written descriptions from `repo-descriptions.json` (keyed by repo name, fields `short`/`desc`), and paginates client-side — 10 repos per page (`.pager`/`.page-btn` in `style.css`).
 - `activity.json` is rendered as-is in array order — **keep it newest-first**; `max` only slices from the top.
+- `contrib-loader.js` fetches the contribution calendar from `https://github-contributions-api.jogruber.de/v4/ByungHyun21?y=last` (third-party CORS mirror — GitHub's own `/users/*/contributions` endpoint sends no CORS headers and cannot be fetched from the browser); renders a 53-week `.contrib-grid` with month labels + legend; failure degrades to an inline message.
 
 ## Key Directories
 
-None — all 13 files live in the repo root (12 site files + `AGENTS.md`). No `src/`, no tests, no CI (`.github/` does not exist), no README/LICENSE/.gitignore.
+None — all 14 files live in the repo root (13 site files + `AGENTS.md`). No `src/`, no tests, no CI (`.github/` does not exist), no README/LICENSE/.gitignore.
 
 ## Development Commands
 
@@ -50,7 +52,7 @@ Commit convention (33 commits, consistent): `area: lowercase message` — areas 
 - `index.html` — landing page; all sections live here (about, activity preview, highlights, experience, publication).
 - `style.css` — entire design system; change visuals here, not with inline styles (existing inline styles are legacy, don't extend them).
 - `main.js` — typing phrases (edit the `phrases` array) and scroll reveal; loaded by every page.
-- `repo-loader.js` / `activity-loader.js` — the only JS with data fetching.
+- `repo-loader.js` / `activity-loader.js` / `contrib-loader.js` — the only JS with data fetching.
 - `activity.json` / `repo-descriptions.json` — the only data files; must stay valid JSON (no trailing commas).
 
 ## Runtime/Tooling Preferences
