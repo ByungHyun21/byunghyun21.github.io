@@ -65,7 +65,6 @@ No tests, no CI, no linters. Verify changes manually:
 1. Serve over HTTP (see commands above) and load every changed page.
 2. `repos.html` depends on the **unauthenticated GitHub API (60 req/hr/IP)** — "Failed to load repos." usually means rate limit, not a bug.
 3. Check the browser console; loader failures degrade to inline messages rather than crashing.
-4. Known wart: `activity.html` is missing `</body>` before `</html>` (browsers tolerate it); fix opportunistically if editing that file.
 
 ## Footer Notes for Agents
 
