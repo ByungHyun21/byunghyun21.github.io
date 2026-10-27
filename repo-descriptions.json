@@ -15,37 +15,9 @@
     "short": "Windows SSH terminal client with saved sessions and split panes",
     "desc": "Electron, xterm.js, ssh2. Double-click a saved session to connect, keep several servers open at once in free-form pane grids, password or private-key auth — credentials encrypted at rest with Windows DPAPI. EN/KO/JA/ZH."
   },
-  "cmpunlocker": {
-    "short": "NVIDIA CMP 170HX 64GB unlock tool",
-    "desc": "Restores compute memory access on CMP 170HX mining cards. Enables 64GB of HBM2e per card for AI inference workloads. Deployed on a 4-card EPYC server."
-  },
   "agent-briefing": {
     "short": "Self-hosted submission board for AI agents",
     "desc": "Agents write reports, humans browse. Zero-config HTTP/JSON protocol — no SDK, no auth, no database. Markdown, charts, media attachments, agent identity, full lifecycle."
-  },
-  "open-gpu-kernel-modules": {
-    "short": "NVIDIA open GPU kernel modules",
-    "desc": "Fork tracking NVIDIA's open kernel modules for custom modifications."
-  },
-  "tench-office": {
-    "short": "100% Rust office suite — Docs, Sheets, Slides, Kodocs",
-    "desc": "Cross-platform office suite built with Tauri 2. Word processor, spreadsheet, slides, and docs editors run fully locally — no telemetry, no accounts, no server round-trips. AI assistance flows through the local Tench Engine."
-  },
-  "tench-media": {
-    "short": "Rust media suite — viewer, image editor, player, video composer",
-    "desc": "Four apps in one: instant image viewer for 100k+ libraries, layered image editor, media player, and multi-track video editor. Tauri 2 with an in-house UI framework — no Electron, no JavaScript, no cloud uploads."
-  },
-  "tench-knowledge": {
-    "short": "Rust research & study tools — reference manager + SRS tutor",
-    "desc": "Research: paper management with DOI/arXiv fetch, PDF annotation, and BibTeX/APA citations. Study: SM-2 spaced-repetition tutor with an AI tutor and multi-subject decks. Local Tench Engine AI — no accounts, no cloud sync."
-  },
-  "tench-code": {
-    "short": "AI-augmented code editor in 100% Rust",
-    "desc": "The entire stack is Rust — tree-sitter editing, file watcher, terminal, Git plumbing, AI router — rendered with the in-house Vello UI, so no Electron or Chromium anywhere. AI routes to local llama.cpp/Ollama or cloud; source never leaves the machine unless opted in."
-  },
-  "tench-authoring": {
-    "short": "Rust long-form writing tools — manuscript editor + interactive fiction",
-    "desc": "Story: novel manuscript editor with chapter organization, character relationship maps, and world-building. Universe: interactive character-driven storytelling with four modes and persistent character memory. AI via the local Tench Engine."
   },
   "mymy": {
     "short": "Local AI agent workspace for solo operators",
@@ -63,10 +35,6 @@
     "short": "Benchmark LLMs against your own custom problem sets",
     "desc": "Register your own multiple-choice and short-answer questions, connect self-hosted LLM servers or external APIs, and get automatic grading with token/cost statistics and side-by-side rankings. Planning stage — no code shipped yet."
   },
-  "kiwi-code": {
-    "short": "Local-first AI coding agent for the terminal — bring your own model",
-    "desc": "Rust CLI agent that reads code, edits files, runs commands, searches, and checks its own work — in the terminal, headless in CI, or a loopback browser client from one binary. Ollama out of the box with no cloud key; pairs with kiwi-wiki for knowledge that survives sessions."
-  },
   "Abalone-Skill-Book": {
     "short": "MCP server that serves agent guidance at the right moment",
     "desc": "Recommends skill documents before an agent starts meaningful work, records which ones it actually opened, and returns their self-check sections before the agent claims completion. Catches the constraints agents tend to skip — API privacy fields, downside scenarios, accessibility."
@@ -78,10 +46,6 @@
   "myLLM": {
     "short": "Single OpenAI-compatible endpoint for all LLM providers",
     "desc": "Route, fail over, and track cost across OpenAI, Anthropic, OpenRouter, local llama.cpp servers, or anything else — behind one familiar OpenAI-compatible API. TypeScript, Next.js, SQLite."
-  },
-  "kiwi-wiki": {
-    "short": "Self-hosted knowledge substrate for terminal agents",
-    "desc": "Rust (axum) service pairing a verbatim document corpus — datasheets, books, web pages — with a compiled, interlinked wiki that agents browse, read, and grow. Holds the actual sources so the agent explores instead of hallucinating from parametric memory. Alpha."
   },
   "Tably": {
     "short": "Local-first visual workflow platform built around AI",
@@ -102,10 +66,6 @@
   "CodeChain": {
     "short": "Turns other repos' best ideas into improvements for your code",
     "desc": "Watches the open-source repositories you pick, analyzes every new commit/PR with an AI agent, and files concrete improvement suggestions for your target project — drafted, then automatically reviewed before you ever see them."
-  },
-  "Copy-Paste-Synthesis-Trainer": {
-    "short": "Offline copy-paste synthesis trainer for YOLO detectors",
-    "desc": "Cut objects out of a handful of real images (BiRefNet RGBA cutouts), composite them onto target-free backgrounds, and mass-produce labeled training sets — where you paste is the label, so zero manual annotation. Trains via ultralytics YOLO; 32 tests passing."
   },
   "LLM170": {
     "short": "Pure-Rust LLM inference engine for the CMP 170HX",
