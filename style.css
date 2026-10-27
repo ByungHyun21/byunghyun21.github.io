@@ -284,21 +284,23 @@ a:hover { opacity: 0.8; }
 .contrib-months {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: 14px;
+  grid-auto-columns: minmax(0, 1fr);
+  width: 100%;
   font-family: var(--mono);
   font-size: 0.6rem;
   color: var(--text-dim);
   margin-bottom: 4px;
+  white-space: nowrap;
 }
 .contrib-grid {
   display: grid;
-  grid-template-rows: repeat(7, 11px);
+  grid-template-rows: repeat(7, auto);
   grid-auto-flow: column;
-  grid-auto-columns: 11px;
+  grid-auto-columns: minmax(0, 1fr);
   gap: 3px;
-  width: max-content;
+  width: 100%;
 }
-.contrib-grid i { border-radius: 2px; background: var(--border); }
+.contrib-grid i { width: 100%; aspect-ratio: 1; border-radius: 2px; background: var(--border); }
 .contrib-grid i.l1 { background: var(--heat-1); }
 .contrib-grid i.l2 { background: var(--heat-2); }
 .contrib-grid i.l3 { background: var(--heat-3); }
@@ -335,8 +337,6 @@ a:hover { opacity: 0.8; }
 .contact-list .label { color: var(--text-dim); font-size: 0.85rem; }
 
 @media (max-width: 640px) {
-  .contrib-grid { grid-template-rows: repeat(7, 10px); grid-auto-columns: 10px; gap: 2px; }
-  .contrib-legend i { width: 10px; height: 10px; }
   header { padding: 12px 16px; height: auto; flex-direction: column; align-items: flex-start; gap: 8px; }
   nav { width: 100%; justify-content: flex-start; overflow-x: auto; }
   main { padding-top: 160px; width: 95%; }
