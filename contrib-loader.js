@@ -16,12 +16,11 @@ function renderContributions(container) {
       const cells = days.map(d =>
         `<i class="l${d.level}" title="${d.count} contribution${d.count === 1 ? '' : 's'} on ${d.date}"></i>`
       ).join('');
-      const legend = [0, 1, 2, 3, 4].map(l => `<i class="l${l}"></i>`).join('');
       container.innerHTML = `<div class="contrib-scroll">
         <div class="contrib-months">${months}</div>
         <div class="contrib-grid">${cells}</div>
       </div>
-      <div class="contrib-legend"><span>${total} contributions · last year</span><span class="spacer">Less</span>${legend}<span>More</span></div>`;
+      <div class="contrib-legend">${total} contributions</div>`;
     })
     .catch(() => {
       container.innerHTML = '<p style="color:var(--text-dim);">Failed to load contributions.</p>';

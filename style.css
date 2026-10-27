@@ -315,8 +315,6 @@ a:hover { opacity: 0.8; }
   font-size: 0.65rem;
   color: var(--text-dim);
 }
-.contrib-legend i { width: 11px; height: 11px; border-radius: 2px; }
-.contrib-legend .spacer { margin-left: 8px; }
 
 /* contact */
 .contact-list { list-style: none; }
