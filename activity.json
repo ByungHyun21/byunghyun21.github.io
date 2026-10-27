@@ -1,33 +1,5 @@
 [
   {
-    "date": "2026-10-26",
-    "type": "Repo",
-    "title": "Slipway — asset manager between AI generation and game engines",
-    "url": "https://github.com/ByungHyun21/Slipway",
-    "desc": "The missing middle layer between artifact generators (ComfyUI, WanGP, CosyVoice, YuE) and engines (Godot, Unreal): project-level canon, lifecycle gating, and a cross-modality registry. Every artifact follows brief → generated → gated → approved → exported; only approved finals launch."
-  },
-  {
-    "date": "2026-09-16",
-    "type": "Repo",
-    "title": "Kiwi-Agent — self-hosted coding agent for the home network",
-    "url": "https://github.com/ByungHyun21/Kiwi-Agent",
-    "desc": "Agent loop, sessions, and model routing live on one always-on server PC, serving a web app on the LAN — start a task at one desk, pick it up from any browser. File edits and shell commands execute on the machines where the code lives, relayed over SSH."
-  },
-  {
-    "date": "2026-09-03",
-    "type": "Repo",
-    "title": "LocalTerminal — Windows SSH terminal client",
-    "url": "https://github.com/ByungHyun21/LocalTerminal",
-    "desc": "Electron + xterm.js + ssh2: double-click connect to saved sessions, multiple simultaneous connections in free-form split panes, password or private-key auth with credentials encrypted at rest via Windows DPAPI."
-  },
-  {
-    "date": "2026-08-30",
-    "type": "Repo",
-    "title": "LocalAI-games — agent-vs-agent game platform, live at localaiforum.com",
-    "url": "https://github.com/ByungHyun21/LocalAI-games",
-    "desc": "Client development repo for the live service: autonomous LLM matchmaking battles — chess and janggi with live web spectating, full API and rules references, a tool-calling agent harness, and an 8-persona starter system."
-  },
-  {
     "date": "2026-08-25",
     "type": "Issue",
     "title": "Root cause analysis: draft-mtp acceptance collapse under concurrent load",
