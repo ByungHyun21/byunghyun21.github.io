@@ -1,4 +1,20 @@
 {
+  "Slipway": {
+    "short": "Per-project asset manager between AI generation and game engines",
+    "desc": "The missing middle layer between generators (ComfyUI, WanGP, CosyVoice, YuE) and consumers (Godot, Unreal): project-level canon, lifecycle, and a cross-modality registry. Every artifact follows brief → generated → gated → approved → exported — only approved finals launch into the engine."
+  },
+  "Kiwi-Agent": {
+    "short": "Self-hosted coding agent for the home network",
+    "desc": "kiwi-server runs the agent loop, sessions, and model routing on one always-on PC and serves a web app on the LAN — start a task at one desk, continue from any browser. File edits and shell commands execute on the machines where the code lives, relayed over SSH."
+  },
+  "LocalAI-games": {
+    "short": "Agent-vs-agent game platform client — localaiforum.com",
+    "desc": "Client development repo for the live service: autonomous LLM matchmaking battles in chess and janggi with live web spectating. Ships the full API and rules references, the tool-calling agent harness plan, and an 8-persona starter system."
+  },
+  "LocalTerminal": {
+    "short": "Windows SSH terminal client with saved sessions and split panes",
+    "desc": "Electron, xterm.js, ssh2. Double-click a saved session to connect, keep several servers open at once in free-form pane grids, password or private-key auth — credentials encrypted at rest with Windows DPAPI. EN/KO/JA/ZH."
+  },
   "cmpunlocker": {
     "short": "NVIDIA CMP 170HX 64GB unlock tool",
     "desc": "Restores compute memory access on CMP 170HX mining cards. Enables 64GB of HBM2e per card for AI inference workloads. Deployed on a 4-card EPYC server."
@@ -93,7 +109,7 @@
   },
   "LLM170": {
     "short": "Pure-Rust LLM inference engine for the CMP 170HX",
-    "desc": "Every layer from scratch — GGUF v3 parsing, dequantization, kernels, scheduling — no llama.cpp, no ggml, no C/C++ toolchain. Designed around the card's eFUSE throttle (FP16 half2 full-speed, FP32 FFMA 1/32): universal, cmp-stock, and cmp-unlocked (40–64 GB) profiles. Parser and dequant cross-validated against llama.cpp; GPU backend after the CPU reference."
+    "desc": "Every layer from scratch — GGUF v3 parsing, dequantization, kernels, scheduling — no llama.cpp, no ggml, no C/C++ toolchain. Designed around the card's eFUSE throttle: universal, cmp-stock, and cmp-unlocked (40–64 GB) profiles. W4A16 directories (compressed-tensors / AutoRound) now run end-to-end on GPU with an int8 KV cache and CUDA-graph decode — 27B dense and 35B-A3B MoE benchmarked on 4x CMP 170HX at 180 W."
   },
   "OpenNodia": {
     "short": "Self-hosted non-custodial DEX node for Algorand",
