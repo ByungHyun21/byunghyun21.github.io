@@ -50,6 +50,10 @@
     </div>
   </section>
   <section class="reveal">
+    <div class="sec-label">GitHub Activity</div>
+    <div id="contrib-preview"></div>
+  </section>
+  <section class="reveal">
     <div class="sec-label">Recent Activity</div>
     <table class="activity-table">
       <thead><tr><th>Date</th><th>Type</th><th>Detail</th></tr></thead>
@@ -120,6 +124,8 @@
 </main>
 <script src="activity-loader.js"></script>
 <script>renderActivity(document.getElementById('activity-preview'), 3);</script>
+<script src="contrib-loader.js"></script>
+<script>renderContributions(document.getElementById('contrib-preview'));</script>
 <script src="main.js"></script>
 </body>
 </html>
